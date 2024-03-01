@@ -2,6 +2,12 @@
 #
 .DS_Store
 
+dist/
+/components/
+/data/
+/package/
+*.tgz
+.npmignore
 # Xcode
 #
 build/
@@ -64,3 +70,4 @@ yarn-error.log
 
 # testing
 /coverage
+package.example.json

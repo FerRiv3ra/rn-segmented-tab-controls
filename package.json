@@ -1,13 +1,22 @@
 {
-  "name": "reactnativesegmentedcontrol",
-  "version": "0.0.1",
-  "private": true,
+  "name": "rn-segmented-tab-controls",
+  "version": "1.0.0",
+  "description": "ReactNative SegmentedControl & SegementedTabs with no dependencies",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "src",
+    "dist/*",
+    "types/*"
+  ],
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "build": "rm -rf dist && tsc && tsc -m es6 --outDir lib-esm"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -30,6 +39,21 @@
     "react-test-renderer": "18.2.0",
     "typescript": "5.0.4"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FerRiv3ra/rn-segmented-tab-controls.git"
+  },
+  "keywords": [
+    "ReactNative",
+    "SegmentedControl",
+    "TabControl"
+  ],
+  "author": "FerRivera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FerRiv3ra/rn-segmented-tab-controls/issues"
+  },
+  "homepage": "https://github.com/FerRiv3ra/rn-segmented-tab-controls#readme",
   "engines": {
     "node": ">=18"
   }
