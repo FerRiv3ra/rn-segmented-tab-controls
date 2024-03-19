@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native';
 import {TestComponent} from './components/TestComponent';
 import TestComponent2 from './components/TestComponent2';
-import {TabControl} from './src';
+import {TabControl} from './package/src/components/TabControl/TabControl';
 
 const App = () => {
   const [value, setValue] = useState('tab1');

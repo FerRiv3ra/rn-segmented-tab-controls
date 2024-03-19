@@ -1,10 +1,10 @@
 {
   "name": "rn-segmented-tab-controls",
-  "version": "1.0.0",
-  "description": "ReactNative SegmentedControl & SegementedTabs with no dependencies",
+  "version": "1.0.3",
+  "description": "A lightweight React Native library for segmented control and tab navigation with no dependencies",
   "private": false,
   "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "files": [
     "src",
     "dist/*",
@@ -44,9 +44,18 @@
     "url": "git+https://github.com/FerRiv3ra/rn-segmented-tab-controls.git"
   },
   "keywords": [
-    "ReactNative",
-    "SegmentedControl",
-    "TabControl"
+    "react-native",
+    "segmented-control",
+    "tab-control",
+    "tabs",
+    "segmented-tabs",
+    "UI component",
+    "navigation",
+    "user interface",
+    "tabs-navigation",
+    "segmented-navigation",
+    "simple",
+    "lightweight"
   ],
   "author": "FerRivera",
   "license": "MIT",

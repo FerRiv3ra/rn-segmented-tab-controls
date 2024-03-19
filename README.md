@@ -1,79 +1,90 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+## React Native Segmented and Tab control V.1.0.0
 
-# Getting Started
+## Installation
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+1. Install library
+   ```bash
+   npm install rn-segmented-tab-controls
+   ```
 
-## Step 1: Start the Metro Server
+## `SegmentedControl` Component
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+2. Use components
+<p align="center" width="100%">
+    <img width="33%" src="https://res.cloudinary.com/fercloudinary/image/upload/v1709313673/GitHub/segmentedControl_dul8fq.gif"> 
+</p>
 
-To start Metro, run the following command from the _root_ of your React Native project:
+```js
+import {SegmentedControl} from 'rn-segmented-tab-controls';
 
-```bash
-# using npm
-npm start
+const App = () => {
+  const [value, setValue] = useState('tab1');
 
-# OR using Yarn
-yarn start
+  const values = [
+    {key: 'Tab 1', value: 'tab1'},
+    {key: 'Tab 2', value: 'tab2'},
+  ];
+
+  return (
+    <SegmentedControl
+      label="Segmented Control"
+      values={values}
+      onChange={value => setValue(value)}
+    />
+  );
+};
 ```
 
-## Step 2: Start your Application
+### Properties
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+| Prop                    | Description                                                     | Type                             | Required | Default     |
+| ----------------------- | --------------------------------------------------------------- | -------------------------------- | -------- | ----------- |
+| **`values`**            | Key and value array to generate each tab.                       | `{key: string; value: string}[]` | **Yes**  | _None_      |
+| **`onChange`**          | Function that returns the selected value.                       | `(value: string) => void`        | **Yes**  | None\_      |
+| **`label`**             | The label with which you want to identify the segmentedControl. | `string`                         | No       | _None_      |
+| **`labelStyle`**        | Styles for label.                                               | `StyleProp<TextStyle>`           | No       | _None_      |
+| **`selectedIndex`**     | Selected initial value.                                         | `number`                         | No       | `0`         |
+| **`backgroundColor`**   | SegmentedControl background color.                              | `string`                         | No       | `'#CCCCCC'` |
+| **`tintColor`**         | Tint color for the selected tab.                                | `string`                         | No       | `'#FFFFFF'` |
+| **`textColor`**         | Text color in the segmentedControl.                             | `string`                         | No       | `'#000000'` |
+| **`selectedTextColor`** | Text color en the selected tab.                                 | `string`                         | No       | `'#000000'` |
+| **`style`**             | Styles for the component container.                             | `StyleProp<ViewStyle>`           | No       | _None_      |
 
-### For Android
+## `TabControl` Component
 
-```bash
-# using npm
-npm run android
+<p align="center" width="100%">
+    <img width="33%" src="https://res.cloudinary.com/fercloudinary/image/upload/v1709313674/GitHub/tabControl_jntf6i.gif"> 
+</p>
 
-# OR using Yarn
-yarn android
+```js
+import {TabControl} from 'rn-segmented-tab-controls';
+import {FormUser, Users} from './components';
+
+const App = () => {
+  const values = [
+    {key: 'Add user', renderItem: FormUser},
+    {key: 'Users', renderItem: Users},
+  ];
+
+  return <TabControl values={values} />;
+};
 ```
 
-### For iOS
+### Properties
 
-```bash
-# using npm
-npm run ios
+| Prop                     | Description                                               | Type                                       | Required | Default     |
+| ------------------------ | --------------------------------------------------------- | ------------------------------------------ | -------- | ----------- |
+| **`values`**             | Key and renderItem array to generate each tab.            | `{key: string; renderItem: JSX.Element}[]` | **Yes**  | _None_      |
+| **`label`**              | The label with which you want to identify the tabControl. | `string`                                   | No       | _None_      |
+| **`labelStyle`**         | Styles for label.                                         | `StyleProp<TextStyle>`                     | No       | _None_      |
+| **`selectedIndex`**      | Selected initial value.                                   | `number`                                   | No       | `0`         |
+| **`backgroundTabColor`** | TabControl background color.                              | `string`                                   | No       | `'#CCCCCC'` |
+| **`tabTintColor`**       | Tint color for the selected tab.                          | `string`                                   | No       | `'#FFFFFF'` |
+| **`textColor`**          | Text color in the TabControl.                             | `string`                                   | No       | `'#000000'` |
+| **`selectedTextColor`**  | Text color en the selected tab.                           | `string`                                   | No       | `'#000000'` |
+| **`containerStyle`**     | Styles for the rendered component.                        | `StyleProp<ViewStyle>`                     | No       | _None_      |
+| **`style`**              | Styles for the component container.                       | `StyleProp<ViewStyle>`                     | No       | _None_      |
 
-# OR using Yarn
-yarn ios
-```
+## License
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licenced under the [MIT License](http://opensource.org/licenses/mit-license.html).
