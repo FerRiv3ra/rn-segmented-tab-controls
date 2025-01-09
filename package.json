@@ -1,6 +1,6 @@
 {
   "name": "rn-segmented-tab-controls",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A lightweight React Native library for segmented control and tab navigation with no dependencies",
   "private": false,
   "main": "dist/index.js",
@@ -18,9 +18,9 @@
     "test": "jest",
     "build": "rm -rf dist && tsc && tsc -m es6 --outDir lib-esm"
   },
-  "dependencies": {
-    "react": "18.2.0",
-    "react-native": "0.73.2"
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-native": ">=0.73.11"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -36,6 +36,8 @@
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
+    "react": "18.2.0",
+    "react-native": "0.73.11",
     "react-test-renderer": "18.2.0",
     "typescript": "5.0.4"
   },
