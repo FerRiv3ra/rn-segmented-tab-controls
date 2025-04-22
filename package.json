@@ -1,6 +1,6 @@
 {
   "name": "rn-segmented-tab-controls",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A lightweight React Native library for segmented control and tab navigation with no dependencies",
   "private": false,
   "main": "dist/index.js",
